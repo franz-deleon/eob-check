@@ -11,7 +11,7 @@ import (
 	"github.com/shopspring/decimal"
 )
 
-const PREFIX_REGEX = `^([0-9]+)-([0-9A-Z]+)_`
+const PREFIX_REGEX = `^([0-9]+)-([0-9A-Za-z]+)_`
 
 type Item struct {
 	name string
