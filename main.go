@@ -225,9 +225,9 @@ func parsePreAndSuf(filename string) (*PreSuf, error) {
 	}
 
 	// determine if this is a "check" file or EOB
-	if string(suffix[0]) == "_" { // an EOB structure
-		ps.suffix = suffix[1 : len(suffix)-4] // remove the file extension
-	} else {
+	if string(suffix[0:3]) == "EOB" { // an EOB structure
+		ps.suffix = suffix[4 : len(suffix)-4] // remove the file extension
+	} else if string(suffix[0:5]) == "check" {
 		ps.suffix = suffix[0 : len(suffix)-4] // remove the file extension
 	}
 
